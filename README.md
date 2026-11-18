@@ -168,3 +168,23 @@ Es necesario para el modelado del sistema implementar políticas que resuelvan l
 [S_3_PR1](https://www.researchgate.net/publication/358104149_Algoritmos_para_determinar_cantidad_y_responsabilidad_de_hilos_en_sistemas_embebidos_modelados_con_Redes_de_Petri_S_3_PR1)
 
 *1 : Artículo cantidad de hilos. https://www.researchgate.net/publication/358104149_Algoritmos_para_determinar_cantidad _y_responsabilidad_de_hilos_en_sistemas_embebidos_modelados_con_Redes_de_Petri_ [URL 🔗](https://www.researchgate.net/publication/358104149_Algoritmos_para_determinar_cantidad_y_responsabilidad_de_hilos_en_sistemas_embebidos_modelados_con_Redes_de_Petri_S_3_PR1)
+
+---
+
+## Cómo ejecutar
+
+Requiere JDK 17 o superior (el proyecto está configurado con JDK 21, pero no usa APIs posteriores a Java 9).
+
+**IntelliJ:** abrir la carpeta del repo y correr `src/tp2/Main.java`.
+
+**Consola:**
+```
+javac -encoding UTF-8 -d out src/tp2/*.java
+java -cp out tp2.Main                         # corre aleatoria y después prioritaria
+java -cp out tp2.Main aleatoria               # solo una política
+java -cp out tp2.Main prioritaria 100 100 150 100 100   # alfa de T2 T3 T5 T7 T8 en ms
+```
+
+Los logs quedan en `log/`:
+- `transiciones_<politica>.txt`: secuencia de disparos (se analiza con regex al final).
+- `ejecucion_<politica>.log`: tiempo, hilo, transición y marcado de cada disparo, más el resumen.
