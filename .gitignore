@@ -1,0 +1,11 @@
+out/
+*.class
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+.DS_Store
+target/
+src/main/TestIntegrante1.java
